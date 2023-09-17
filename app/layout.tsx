@@ -1,7 +1,10 @@
-import { cn } from "@/libs/utils";
 import "./globals.css";
 import type { Metadata } from "next";
+
 import { Open_Sans } from "next/font/google";
+import { cn } from "@/libs/utils";
+
+import Navbar from "@/components/Navbar";
 
 const open = Open_Sans({ subsets: ["latin"] });
 
@@ -17,12 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          open.className,
-          "bg-[#19142A] px-16 2xl:px-10  max-w-[1280px] m-auto"
-        )}
-      >
+      <body className={cn(open.className, "bg-[#19142A]")}>
+        <Navbar />
         {children}
       </body>
     </html>
