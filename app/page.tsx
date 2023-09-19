@@ -2,6 +2,8 @@ import Hero from "@/pages/Hero";
 import Section from "./wrapper/Section";
 import About from "@/pages/About";
 import Skills from "@/pages/Skills";
+import Work from "@/pages/Work";
+import Contact from "@/pages/Contact";
 
 const sections = [
   {
@@ -18,6 +20,16 @@ const sections = [
     name: "skills",
     slug: "skills",
     page: <Skills />,
+  },
+  {
+    name: "work",
+    slug: "work",
+    page: <Work />,
+  },
+  {
+    name: "contact",
+    slug: "contact",
+    page: <Contact />,
   },
 ];
 
