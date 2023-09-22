@@ -14,7 +14,12 @@ interface SectionProps {
     page: JSX.Element;
   }[];
 }
-const Section: FC<SectionProps> = ({ name, slug, page: Page, navigation }) => {
+const Section: React.FC<SectionProps> = ({
+  name,
+  slug,
+  page: Page,
+  navigation,
+}) => {
   return (
     <div>
       <div className="relative ">
