@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import profile from "@/images/aboutprofile.svg";
 import { getEducation } from "@/sanity/lib/query-utils";
 import { Education } from "@/types/Education";
 import { PortableText } from "@portabletext/react";
+import { useEffect, useState } from "react";
 
 const EducationItem = ({ education }: { education: Education }) => {
   return (
@@ -12,12 +15,12 @@ const EducationItem = ({ education }: { education: Education }) => {
           <h3 className="text-xl font-bold text-[#D0273C]">
             {education.university}
           </h3>
-          education.startDate && (
-          <p className="ml-4 text-sm font-light text-[#FBB9C1]">
-            {education.startDate ? `${education.startDate} -` : ``}
-            {education.enrolled ? ` Present` : ` ${education.endDate}`}
-          </p>
-          )
+          {education.startDate && (
+            <p className="ml-4 text-sm font-light text-[#FBB9C1]">
+              {`${education.startDate} -`}
+              {education.enrolled ? ` Present` : ` ${education.endDate}`}
+            </p>
+          )}
         </div>
         <div className="text-md mt-4 font-light">
           <PortableText value={education.content} />
@@ -27,8 +30,15 @@ const EducationItem = ({ education }: { education: Education }) => {
   );
 };
 
-const About = async ({}) => {
-  const EducationItems = await getEducation();
+const About = () => {
+  const [data, setData] = useState<Education[]>();
+  useEffect(() => {
+    async function getData() {
+      const EducationItems = await getEducation();
+      setData(EducationItems);
+    }
+    getData();
+  }, []);
 
   return (
     <div className="h-full lg:grid lg:h-[100vh] lg:place-content-center">
@@ -59,9 +69,10 @@ const About = async ({}) => {
           <h2 className="mb-14 text-4xl font-bold">Education</h2>
           <ul className=" relative m-0 flex flex-col gap-10 border-l-2 border-[#D0273C] p-0">
             <div className="absolute -bottom-[10vh] -left-[2px] h-[10vh] border-l-2 border-dashed border-[#D0273C]" />
-            {EducationItems.map((education) => (
-              <EducationItem education={education} key={education._id} />
-            ))}
+            {data &&
+              data.map((education) => (
+                <EducationItem education={education} key={education._id} />
+              ))}
           </ul>
         </div>
       </div>
