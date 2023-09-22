@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import profile from "@/images/aboutprofile.svg";
+import profile from "@/public/aboutprofile.svg";
 import { getEducation } from "@/sanity/lib/query-utils";
 import { Education } from "@/types/Education";
 import { PortableText } from "@portabletext/react";

@@ -1,7 +1,7 @@
-import { cn } from "@/libs/utils";
+import { cn } from "@/app/libs/utils";
 import Image from "next/image";
 
-import profilewebImg from "@/images/profile.png";
+import profilewebImg from "@/public/profile.png";
 
 export default function Hero() {
   return (

@@ -2,9 +2,9 @@ import "../globals.css";
 import type { Metadata } from "next";
 
 import { Open_Sans } from "next/font/google";
-import { cn } from "@/libs/utils";
+import { cn } from "@/app/libs/utils";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/app/components/Navbar";
 
 const open = Open_Sans({ subsets: ["latin"] });
 

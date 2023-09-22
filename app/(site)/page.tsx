@@ -1,9 +1,9 @@
-import Hero from "@/pages/Hero";
+import Hero from "@/app/pages/Hero";
 import Section from "@/app/components/wrapper/Section";
-import About from "@/pages/About";
-import Skills from "@/pages/Skills";
-import Work from "@/pages/Work";
-import Contact from "@/pages/Contact";
+import About from "@/app/pages/About";
+import Skills from "@/app/pages/Skills";
+import Work from "@/app/pages/Work";
+import Contact from "@/app/pages/Contact";
 
 const sections = [
   {

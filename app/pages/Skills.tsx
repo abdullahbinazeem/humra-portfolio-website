@@ -1,4 +1,4 @@
-import { cn } from "@/libs/utils";
+import { cn } from "@/app/libs/utils";
 
 export default function Hero() {
   return (
