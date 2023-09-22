@@ -12,12 +12,12 @@ const EducationItem = ({ education }: { education: Education }) => {
           <h3 className="text-xl font-bold text-[#D0273C]">
             {education.university}
           </h3>
-          {education.startDate && (
-            <p className="ml-4 text-sm font-light text-[#FBB9C1]">
-              {`${education.startDate} -`}
-              {education.enrolled ? ` Present` : ` ${education.endDate}`}
-            </p>
-          )}
+          education.startDate && (
+          <p className="ml-4 text-sm font-light text-[#FBB9C1]">
+            {education.startDate ? `${education.startDate} -` : ``}
+            {education.enrolled ? ` Present` : ` ${education.endDate}`}
+          </p>
+          )
         </div>
         <div className="text-md mt-4 font-light">
           <PortableText value={education.content} />
