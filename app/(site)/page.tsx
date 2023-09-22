@@ -5,6 +5,8 @@ import Skills from "@/app/pages/Skills";
 import Work from "@/app/pages/Work";
 import Contact from "@/app/pages/Contact";
 
+export const revalidate = 0;
+
 const sections = [
   {
     name: "home",
