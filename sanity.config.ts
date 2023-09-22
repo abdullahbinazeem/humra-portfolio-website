@@ -7,7 +7,6 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, projectId } from "./sanity/env";
 import schemas from "@/sanity/schemas";
 
 export default defineConfig({
@@ -16,8 +15,8 @@ export default defineConfig({
   name: "default",
   title: "sanity-tut",
   apiVersion: "2023-03-04",
-  projectId,
-  dataset,
+  projectId: "8at4agk2",
+  dataset: "sanity",
   schema: { types: schemas },
-  plugins: [deskTool(), visionTool({ defaultApiVersion: apiVersion })],
+  plugins: [deskTool(), visionTool({ defaultApiVersion: "2023-03-04" })],
 });
