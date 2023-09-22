@@ -60,7 +60,7 @@ const About = async ({}) => {
           <ul className=" relative m-0 flex flex-col gap-10 border-l-2 border-[#D0273C] p-0">
             <div className="absolute -bottom-[10vh] -left-[2px] h-[10vh] border-l-2 border-dashed border-[#D0273C]" />
             {EducationItems.map((education) => (
-              <EducationItem education={education} />
+              <EducationItem education={education} key={education._id} />
             ))}
           </ul>
         </div>

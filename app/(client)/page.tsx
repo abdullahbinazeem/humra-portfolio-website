@@ -38,6 +38,7 @@ export default function Home() {
     <div>
       {sections.map((section) => (
         <Section
+          key={section.name}
           name={section.name}
           slug={section.slug}
           page={section.page}

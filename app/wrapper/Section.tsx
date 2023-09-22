@@ -44,7 +44,7 @@ const Section: FC<SectionProps> = ({ name, slug, page: Page, navigation }) => {
         <div className=" absolute bottom-[50%] right-10  top-[50%] hidden lg:block">
           <div className="flex flex-col gap-5">
             {navigation.map((item) => (
-              <a href={`#${item.slug}`}>
+              <a href={`#${item.slug}`} key={item.name}>
                 {slug == item.slug ? (
                   <GoDotFill
                     size={30}
