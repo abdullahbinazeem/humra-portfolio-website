@@ -36,7 +36,7 @@ const sections = [
 export default function Home() {
   return (
     <div>
-      {sections.map((section) => (
+      {/* {sections.map((section) => (
         <Section
           key={section.name}
           name={section.name}
@@ -44,7 +44,8 @@ export default function Home() {
           page={section.page}
           navigation={sections}
         />
-      ))}
+      ))} */}
+      a
     </div>
   );
 }
