@@ -1,9 +1,9 @@
-import { groq } from "next-sanity";
-import { client } from "./client";
+import { createClient, groq } from "next-sanity";
+import config from "./client";
 import { Education } from "@/types/Education";
 
 export async function getEducation(): Promise<Education[]> {
-  return client.fetch(
+  return createClient(config).fetch(
     groq`*[_type == "education"]{
         _id,
         _createdAt,
