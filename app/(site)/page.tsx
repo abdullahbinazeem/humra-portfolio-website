@@ -1,5 +1,5 @@
 import Hero from "@/pages/Hero";
-import Section from "@/app/wrapper/Section";
+import Section from "@/app/components/wrapper/Section";
 import About from "@/pages/About";
 import Skills from "@/pages/Skills";
 import Work from "@/pages/Work";
