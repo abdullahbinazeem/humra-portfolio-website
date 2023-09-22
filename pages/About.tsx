@@ -31,14 +31,14 @@ const EducationItem = ({ education }: { education: Education }) => {
 };
 
 const About = () => {
-  const [data, setData] = useState<Education[]>();
-  useEffect(() => {
-    async function getData() {
-      const EducationItems = await getEducation();
-      setData(EducationItems);
-    }
-    getData();
-  }, []);
+  // const [data, setData] = useState<Education[]>();
+  // useEffect(() => {
+  //   async function getData() {
+  //     const EducationItems = await getEducation();
+  //     setData(EducationItems);
+  //   }
+  //   getData();
+  // }, []);
 
   return (
     <div className="h-full lg:grid lg:h-[100vh] lg:place-content-center">
@@ -69,10 +69,6 @@ const About = () => {
           <h2 className="mb-14 text-4xl font-bold">Education</h2>
           <ul className=" relative m-0 flex flex-col gap-10 border-l-2 border-[#D0273C] p-0">
             <div className="absolute -bottom-[10vh] -left-[2px] h-[10vh] border-l-2 border-dashed border-[#D0273C]" />
-            {data &&
-              data.map((education) => (
-                <EducationItem education={education} key={education._id} />
-              ))}
           </ul>
         </div>
       </div>
