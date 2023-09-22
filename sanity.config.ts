@@ -14,5 +14,5 @@ export default defineConfig({
   basePath: "/admin",
 
   schema: { types: schemas },
-  plugins: [deskTool(), visionTool({ defaultApiVersion: "2023-03-04" })],
+  plugins: [deskTool()],
 });
