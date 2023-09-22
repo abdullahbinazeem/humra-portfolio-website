@@ -10,7 +10,7 @@ export default defineConfig({
 
   apiVersion: "2023-03-04",
   projectId: "8at4agk2",
-  dataset: "sanity",
+  dataset: "production",
   basePath: "/admin",
 
   schema: { types: schemas },
