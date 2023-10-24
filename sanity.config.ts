@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
 
 import schemas from "@/sanity/schemas";
 
@@ -13,5 +14,5 @@ export default defineConfig({
   basePath: "/admin",
 
   schema: { types: schemas },
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
 });

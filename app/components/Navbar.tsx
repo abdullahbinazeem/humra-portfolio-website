@@ -10,28 +10,28 @@ const navbar: FC<navbarProps> = ({}) => {
       </div>
       <div className="flex gap-12 text-lg font-semibold ">
         <li>
-          <a>
+          <a href="#skills">
             <p className="cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:scale-105 hover:text-[#D0273C]">
               Skills
             </p>
           </a>
         </li>
         <li>
-          <a>
+          <a href="#about">
             <p className="cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:scale-105 hover:text-[#D0273C]">
               About Me
             </p>
           </a>
         </li>
         <li>
-          <a>
+          <a href="#skills">
             <p className="cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:scale-105 hover:text-[#D0273C]">
               Experience
             </p>
           </a>
         </li>
         <li>
-          <a>
+          <a href="#work">
             <p className="cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:scale-105 hover:text-[#D0273C]">
               Projects
             </p>
@@ -42,6 +42,7 @@ const navbar: FC<navbarProps> = ({}) => {
             className={cn(
               " cursor-pointer rounded-md bg-[#D0273C] px-6 py-3 hover:scale-105",
             )}
+            href="#contact"
           >
             <span>Contact</span>
           </a>

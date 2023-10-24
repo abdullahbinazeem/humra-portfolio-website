@@ -1,9 +1,23 @@
+"use client";
+
 import { cn } from "@/app/libs/utils";
 import Image from "next/image";
 
 import profilewebImg from "@/public/profile.png";
+import { Personal } from "@/types/Personal";
+import { useEffect, useState } from "react";
+import { getContact, getEducation } from "@/sanity/lib/query-utils";
 
 export default function Hero() {
+  const [data, setData] = useState<Personal>();
+  useEffect(() => {
+    async function getData() {
+      const ContactInfo = await getContact();
+      setData(ContactInfo);
+    }
+    getData();
+  }, []);
+
   return (
     <div className="grid h-full w-full place-content-center text-white lg:h-[88vh]">
       <div className="flex flex-col-reverse items-center lg:flex-row">
@@ -13,16 +27,13 @@ export default function Hero() {
               Hi, I&apos;m
             </h2>
             <h1 className="mb-3 text-5xl font-extrabold  text-[#D0273C] lg:text-6xl">
-              Name Last Name
+              {data?.first_name} {data?.last_name}
             </h1>
             <h3 className="mb-6 text-xl font-bold lg:mb-12 lg:text-2xl">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit
+              {data?.intro_sentence}
             </h3>
             <p className="text-md font-light lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit in
-              curabitur himenaeos, nam sapien sociosqu et etiam cursus fringilla
-              id curae nascetur, commodo turpis aliquam potenti habitasse massa
-              cras eros pretium.
+              {data?.intro_description}
             </p>
           </div>
           <a

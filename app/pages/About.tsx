@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import profile from "@/public/aboutprofile.svg";
-import { getEducation } from "@/sanity/lib/query-utils";
+import { getContact, getEducation } from "@/sanity/lib/query-utils";
 import { Education } from "@/types/Education";
 import { PortableText } from "@portabletext/react";
 import { useEffect, useState } from "react";
+import { Personal } from "@/types/Personal";
 
 const EducationItem = ({ education }: { education: Education }) => {
   return (
@@ -32,9 +33,12 @@ const EducationItem = ({ education }: { education: Education }) => {
 
 const About = () => {
   const [data, setData] = useState<Education[]>();
+  const [personal, setPersonal] = useState<Personal>();
   useEffect(() => {
     async function getData() {
       const EducationItems = await getEducation();
+      const Contact = await getContact();
+      setPersonal(Contact);
       setData(EducationItems);
     }
     getData();
@@ -47,15 +51,7 @@ const About = () => {
           <h1 className="mb-6 text-5xl font-extrabold text-[#D0273C] lg:mb-10 lg:text-6xl">
             About Me
           </h1>
-          <p className=" text-lg font-light">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit in curabitur
-            himenaeos, nam sapien sociosqu et etiam cursus fringilla id curae
-            nascetur, commodo turpis aliquam potenti habitasse massa cras eros
-            pretium.Name Lorem ipsum dolor sit amet consectetur adipiscing elit
-            in curabitur himenaeos, nam sapien sociosqu et etiam cursus
-            fringilla id curae nascetur, commodo turpis aliquam potenti
-            habitasse massa cras eros pretium.Name
-          </p>
+          <p className=" text-lg font-light">{personal?.about_description}</p>
           <div className="relative m-auto w-[400px] text-center transition-all ease-in-out hover:scale-110 ">
             <Image
               src={profile}
